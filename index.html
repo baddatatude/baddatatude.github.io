@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cooper Harris builds infrastructure for AI agents in Los Angeles. Explore Argus, Wrong Floor, and Check Yourself, an open-source chess analysis library.">
+  <title>Cooper Harris — Data scientist</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header frame">
+    <a class="wordmark" href="/" aria-current="page">Cooper Harris<span>.</span></a>
+    <nav aria-label="Main"><a href="/argus/">Argus</a><a href="/wrong-floor/">Wrong Floor</a><a href="/projects/check-yourself/">Check Yourself</a></nav>
+  </header>
+  <main id="main" class="frame" tabindex="-1">
+    <section class="intro" aria-labelledby="intro-title">
+      <p class="eyebrow">Data scientist <span> / </span> Los Angeles</p>
+      <h1 id="intro-title">I build infrastructure<br class="desktop-break"> for AI agents.</h1>
+      <p class="lede">I’m Cooper Harris, a data scientist with a PhD in seismology. This is also a home for my games, sports analytics, and chess.</p>
+      <p class="intro-link"><a href="https://www.linkedin.com/in/cooper-w-harris-5751416a/">LinkedIn</a></p>
+    </section>
+    <section class="projects" aria-labelledby="projects-title">
+      <h2 class="eyebrow section-label" id="projects-title">Projects</h2>
+      <article class="feature">
+        <div class="feature-copy">
+          <p class="eyebrow">Agent infrastructure</p>
+          <h3>Argus</h3>
+          <p>Argus gives coding agents separate Git worktrees so they can work in parallel, then brings their changes together for integration and review.</p>
+          <a class="button" href="/argus/">How Argus works</a>
+        </div>
+        <figure class="workflow">
+          <figcaption>Argus workflow</figcaption>
+          <div class="node">Shared repository</div>
+          <div class="parallel">
+            <div class="node">Agent A <small>Worktree A</small></div>
+            <div class="node">Agent B <small>Worktree B</small></div>
+          </div>
+          <div class="node outcome">Integration &amp; review</div>
+        </figure>
+      </article>
+      <article class="secondary">
+        <div>
+          <p class="eyebrow">Godot prototype</p>
+          <h3><a href="/wrong-floor/">Wrong Floor</a></h3>
+          <p>A playable game prototype developed with Argus.</p>
+        </div>
+      </article>
+      <article class="feature release">
+        <div class="feature-copy">
+          <p class="eyebrow">Open source · Published — v0.2.0</p>
+          <h3><a href="/projects/check-yourself/">Check Yourself</a></h3>
+          <p class="project-tagline">Check yourself before your rating wrecks itself.</p>
+          <p>An open-source Python library for Stockfish-powered chess analysis, interactive reports, cross-game analytics, and personalized training exercises.</p>
+          <div class="demo-actions">
+            <a class="button" href="/projects/check-yourself/single.html">Single-game demo</a>
+            <a class="button" href="/projects/check-yourself/multi.html">Multi-game demo</a>
+          </div>
+        </div>
+        <figure class="build-photo">
+          <img src="/projects/check-yourself/screenshots/single-game.png" width="1400" height="1050" loading="lazy"
+            alt="Evaluation timeline and synchronized chessboard in the single-game report">
+          <figcaption>Single-game report using synthetic game data.</figcaption>
+        </figure>
+      </article>
+    </section>
+  </main>
+  <footer class="site-footer frame">Cooper Harris <span> / </span> Los Angeles</footer>
+</body>
+</html>

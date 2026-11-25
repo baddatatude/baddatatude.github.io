@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Check Yourself is an open-source Python library for chess game analysis, interactive reporting, and Stockfish-powered training.">
+  <title>Check Yourself — Cooper Harris</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header frame">
+    <a class="wordmark" href="/">Cooper Harris<span>.</span></a>
+    <nav aria-label="Main"><a href="/argus/">Argus</a><a href="/wrong-floor/">Wrong Floor</a><a href="/projects/check-yourself/" aria-current="page">Check Yourself</a></nav>
+  </header>
+  <main id="main" class="frame detail" tabindex="-1">
+    <header class="intro">
+      <p class="eyebrow">Published — v0.2.0</p>
+      <h1>Check Yourself</h1>
+      <p class="project-tagline">Check yourself before your rating wrecks itself.</p>
+      <p class="lede">An open-source Python library for chess game analysis, interactive performance reports, cross-game analytics, and personalized training exercises powered by Stockfish.</p>
+      <ul class="link-list" aria-label="Release resources">
+        <li><a href="https://github.com/baddatatude/check-yourself">GitHub</a></li>
+        <li><a href="https://github.com/baddatatude/check-yourself/releases/tag/v0.2.0">v0.2.0 release</a></li>
+        <li><a href="https://pypi.org/project/check-yourself-chess/">PyPI</a></li>
+      </ul>
+    </header>
+    <section class="project-section article-copy" aria-labelledby="demos-title">
+      <h2 id="demos-title">Try the interactive reports</h2>
+      <p>Both demos use synthetic games and run in your browser without an installation.</p>
+      <div class="demo-grid">
+        <article class="demo-card">
+          <h3>Single-game report</h3>
+          <p>Step through the evaluation timeline, replay turning points, and compare the played moves with Stockfish’s suggestions.</p>
+          <a class="button" href="single.html">Open single-game demo</a>
+          <img src="screenshots/single-game.png" width="1400" height="1050" alt="Stockfish evaluation timeline above a chessboard and replay controls">
+        </article>
+        <article class="demo-card">
+          <h3>Multi-game report</h3>
+          <p>Compare performance across games, find recurring patterns, and try exercises generated from those positions.</p>
+          <a class="button" href="multi.html">Open multi-game demo</a>
+          <img src="screenshots/multi-game.png" width="1400" height="1050" alt="Cross-game patterns table and bar charts comparing results and centipawn loss">
+        </article>
+      </div>
+      <p class="notice-link"><a href="licenses/">Demo licensing and attribution</a></p>
+    </section>
+    <section class="project-section article-copy" aria-labelledby="engineering-title">
+      <h2 id="engineering-title">Engineering</h2>
+      <ul class="engineering-list">
+        <li><strong>Local analysis.</strong> A typed, reusable Python API and CLI run Stockfish on individual PGNs or game collections. The library ties evaluations to the exact ply and board position, tracks mate distances separately from centipawn scores, and emits versioned JSON.</li>
+        <li><strong>Interactive reporting.</strong> Standalone HTML reports work offline. Plotly.js timelines stay synchronized with the board and distinguish the moves played from hypothetical continuations.</li>
+        <li><strong>Training.</strong> Cross-game analytics surface recurring mistakes. Generated exercises score verified solutions and label other alternatives as ungraded.</li>
+        <li><strong>Release verification.</strong> Eight <a href="https://github.com/baddatatude/check-yourself/pull/1/checks">hosted CI lanes</a> passed across Python 3.11–3.14 on macOS and Ubuntu, covering real Stockfish runs, fresh wheel installs, offline reports, and Chrome interactions. Release checks include dependency auditing, privacy checks, and artifact integrity verification. PyPI releases use Trusted Publishing.</li>
+      </ul>
+      <p>Built with Python, Stockfish, python-chess, Plotly.js, GitHub Actions, and PyPI.</p>
+    </section>
+    <section class="project-section article-copy" aria-labelledby="install-title">
+      <h2 id="install-title">Install and run locally</h2>
+      <p>Use Python 3.11–3.14 and install Stockfish separately. Put the Stockfish executable on your PATH for engine analysis. The analysis runs locally without an account, API key, or paid inference.</p>
+      <pre><code>pip install check-yourself-chess</code></pre>
+      <p>For interactive HTML reports, install the HTML extra. These examples generate a single-game report and a batch report.</p>
+      <pre><code>python -m pip install 'check-yourself-chess[html]==0.2.0'
+check-yourself analyze-pgn game.pgn --color white -o analysis.json --html review.html
+check-yourself analyze-pgn batch.pgn --player Alice -o batch.json --html batch.html</code></pre>
+    </section>
+  </main>
+  <footer class="site-footer frame">Cooper Harris <span> / </span> Los Angeles</footer>
+</body>
+</html>

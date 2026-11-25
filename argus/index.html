@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How Argus uses Git worktrees for parallel coding agents and checkpoints progress so interrupted work can resume.">
+  <title>Argus — Cooper Harris</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header frame">
+    <a class="wordmark" href="/">Cooper Harris<span>.</span></a>
+    <nav aria-label="Main"><a href="/argus/" aria-current="page">Argus</a><a href="/wrong-floor/">Wrong Floor</a><a href="/projects/check-yourself/">Check Yourself</a></nav>
+  </header>
+  <main id="main" class="frame detail" tabindex="-1">
+    <header class="intro">
+      <p class="eyebrow">Agent infrastructure</p>
+      <h1>Argus</h1>
+      <p class="lede">Infrastructure for running coding agents in parallel and bringing their changes together for review.</p>
+    </header>
+    <div class="detail-grid">
+      <div class="article-copy">
+        <section>
+          <h2>Give each agent its own checkout</h2>
+          <p>A Git worktree is a separate directory where you can edit files from the same repository. Argus gives each agent a worktree, so two agents can edit their own copies of a file at the same time.</p>
+          <p>Argus then brings the changes together for integration and review. That’s where overlapping edits can be reconciled and the combined changes can be evaluated.</p>
+        </section>
+        <section>
+          <h2>Resume from a checkpoint</h2>
+          <p>Argus checkpoints progress as agents work. If a run is interrupted, work can resume from a saved checkpoint.</p>
+        </section>
+      </div>
+      <figure class="workflow">
+        <figcaption>Argus workflow</figcaption>
+        <div class="node">Shared repository</div>
+        <div class="parallel">
+          <div class="node">Agent A <small>Worktree A</small></div>
+          <div class="node">Agent B <small>Worktree B</small></div>
+        </div>
+        <div class="node outcome">Integration &amp; review</div>
+      </figure>
+    </div>
+    <p class="related"><a href="/wrong-floor/">Wrong Floor</a> is a Godot game prototype developed with Argus.</p>
+    <section class="eureka article-copy" aria-labelledby="eureka-title">
+      <h2 id="eureka-title">Eureka</h2>
+      <figure class="build-photo">
+        <img src="eureka-setup.jpg" width="520" height="645" loading="lazy"
+          alt="Eureka’s open, wood-front case on the workbench">
+        <figcaption>Eureka on the bench while I installed the OS and set up SSH.</figcaption>
+      </figure>
+      <p class="build-link"><a href="/eureka/">See Eureka in the rack and get the parts list</a></p>
+    </section>
+  </main>
+  <footer class="site-footer frame">Cooper Harris <span> / </span> Los Angeles</footer>
+</body>
+</html>
